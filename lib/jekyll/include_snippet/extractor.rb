@@ -2,13 +2,13 @@ module Jekyll
   module IncludeSnippet
     class Extractor
       BEGIN_REGEX = %r{
-        (\s*)\#\s*      # Line must start with a hash (surrounding whitespace optional)
+        (\s*)\/\/\s*      # Line must start with a hash (surrounding whitespace optional)
         begin-snippet:  # Magic string for beginning a snippet
         (.+)            # The remainder of the line is the snippet name
       }x
 
       END_REGEX = %r{
-        \s*\#\s*     # Line must start with a hash (surrounding whitespace optional)
+        \s*\/\/\s*     # Line must start with a hash (surrounding whitespace optional)
         end-snippet  # Magic string for ending a snippet
       }x
 
